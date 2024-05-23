@@ -1,2 +1,2 @@
 # whl
-repository to host python whl package.
+repository to host python whl packages.

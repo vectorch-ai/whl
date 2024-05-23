@@ -1,0 +1,8 @@
+# Visual Studio Code
+/.vscode*
+
+# distribution / packaging
+/dist/*
+/build/*
+/python/dist/*
+*.whl
