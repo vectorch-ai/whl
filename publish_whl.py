@@ -23,7 +23,7 @@ def create_index_file(pkg_path: Path):
         if not index_path.exists():
             index_path.write_text("<!DOCTYPE html>")
 
-        if not entry_exists(index_path, dir):
+        if not entry_exists(index_path, f'>{dir}<'):
             new_line = f'\n<a href="{dir}">{dir}</a><br>'
             append_entry(index_path, new_line)
         path /= dir
@@ -58,7 +58,7 @@ def publish_whl(whls_path: str):
         index_path = pkg_path / "index.html"
         if not index_path.exists():
             index_path.write_text("<!DOCTYPE html>")
-        if not entry_exists(index_path, whl_file_name):
+        if not entry_exists(index_path, f">{whl_file_name}<"):
             publish_entry(index_path, whl_file_name, pkg, ver, whl_path)
         else:
             print(f"{whl_file_name} already exists in {index_path}")
